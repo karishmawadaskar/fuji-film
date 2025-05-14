@@ -3,6 +3,7 @@ import './Home.css'
 import axios from 'axios'
 import FilmCard from '../../component/FilmCard/FilmCard'
 import toast, { Toaster } from 'react-hot-toast'
+import imgAddFilm from './../../Assets/add.png';
 function Home() {
   const [films, setFilms] = useState([])
 
@@ -60,6 +61,7 @@ function Home() {
 
       }
       <Toaster />
+      <img src={imgAddFilm} className='imgAddFilm'alt='addimage'/>
     </div>
   )
 }

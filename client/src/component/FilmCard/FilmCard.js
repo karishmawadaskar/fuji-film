@@ -13,12 +13,11 @@ function FilmCard({
     countries,
     awards,
     _id
- }) 
-    {
+}) {
     return (
         <div className='film-card'>
-          { title}
-            </div>
+            {title}
+        </div>
     )
 }
 
