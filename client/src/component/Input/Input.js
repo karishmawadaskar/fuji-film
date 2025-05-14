@@ -1,20 +1,22 @@
 import React from 'react'
 import './Input.css'
 
-function Input({ value,onchange ,lable ,placeholder,type="text"}) {
+function Input({ value,onChange ,label ,placeholder,type="text"}) {
     return (
         <div>
             <div className='input-container'>
-                <label htmlFor={lable}className='input-lable'>
-                   {lable}
+                <label htmlFor={label}className='input-lable'>
+                   {label}
                 </label>
                 <input
                     type={type}
-                    id={lable}
+                    id={label}
                     className='input-element'
                     value={value}
-                    onChange={(e) => onchange( e.target.value )} 
-                    placeholder={placeholder}/>
+                    onChange={(e) => onChange( e.target.value )} 
+                    placeholder={placeholder}
+                    required="true"
+                    />
             </div>
         </div>
     )

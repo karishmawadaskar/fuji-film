@@ -4,9 +4,10 @@ import Input from '../../component/Input/Input'
 import Button from '../../component/Button/Button'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 function AddFilm() {
-
+    const navigate= useNavigate();
     const [film, setFilms] = useState({
         title: "",
         shortDescription: "",
@@ -20,6 +21,7 @@ function AddFilm() {
         awards: "",
     })
     const addFilm = async () => {
+        try{
         const response = await axios.post(`${process.env.REACT_APP_API_URL}/films`, {
             title: film.title,
             shortDescription: film.shortDescription,
@@ -46,69 +48,79 @@ function AddFilm() {
             countries: "",
             awards: "",
         })
-    }
+     toast.success(response.data.message);
+               setTimeout(() => {
+                navigate("/");
+              }, 1000);
+        
+    }catch(err) {
+    console.error("Add film failed:", err.response || err);
+    toast.error(err?.response?.data?.message || "Something went wrong");
+  }
+ };
     return (
         <div>
             <h1>Add Film</h1>
             <div className='add-film-form'>
                 <Input
-                    lable="title"
+                    label="Title"
                     value={film.title}
-                    onchange={(val) => { setFilms({ ...film, title: val }) }}
+                    onChange={(val) => { setFilms({ ...film, title: val }) }}
                     placeholder={"Enter a title of the film"}
+                    
                 />
                 <Input
-                    lable="shortDescription"
+                    label="Short Description"
                     value={film.shortDescription}
-                    onchange={(val) => { setFilms({ ...film, shortDescription: val }) }}
+                    onChange={(val) => { setFilms({ ...film, shortDescription: val }) }}
                     placeholder={"Enter a short description of the film"}
                 />
                 <Input
-                    lable="director"
+                    label="Director"
                     value={film.director}
-                    onchange={(val) => { setFilms({ ...film, director: val }) }}
+                    onChange={(val) => { setFilms({ ...film, director: val }) }}
                     placeholder={"Enter a director name of the film"}
                 />
                 <Input
-                    lable="poster"
+                    label="Poster"
                     value={film.poster}
-                    onchange={(val) => { setFilms({ ...film, poster: val }) }}
+                    onChange={(val) => { setFilms({ ...film, poster: val }) }}
                     placeholder={"Enter a URL of the poster"}
                 />
                 <Input
-                    lable="releaseYear"
+                    label="ReleaseYear"
                     value={film.releaseYear}
-                    onchange={(val) => { setFilms({ ...film, releaseYear: val }) }}
+                    onChange={(val) => { setFilms({ ...film, releaseYear: val }) }}
                     placeholder={"Enter a releaseYear of the film"}
                 />
                 <Input
-                    lable="category"
+                    label="Category"
                     value={film.category}
-                    onchange={(val) => { setFilms({ ...film, category: val }) }}
+                    onChange={(val) => { setFilms({ ...film, category: val }) }}
                     placeholder={"Enter a category of the film"}
                 />
                 <Input
-                    lable="language"
+                    label="Language"
                     value={film.language}
-                    onchange={(val) => { setFilms({ ...film, language: val }) }}
+                    onChange={(val) => { setFilms({ ...film, language: val }) }}
                     placeholder={"Enter a language of the film"}
                 />
                 <Input
-                    lable="rating"
+                    label="Rating"
                     value={film.rating}
-                    onchange={(val) => { setFilms({ ...film, rating: val }) }}
+                    onChange={(val) => { setFilms({ ...film, rating: val }) }}
                     placeholder={"Enter a rating of the film"}
                 />
                 <Input
-                    lable="countries"
+                    label="Countries"
                     value={film.countries}
-                    onchange={(val) => { setFilms({ ...film, countries: val }) }}
+                    onChange={(val) => { setFilms({ ...film, countries: val }) }}
                     placeholder={"Enter a countries of the film"}
                 />
                 <Input
-                    lable="awards"
+                    label="Awards"
                     value={film.awards}
-                    onchange={(val) => { setFilms({ ...film, awards: val }) }}
+                    onChange={(val) => { setFilms({ ...film, awards: val }) }}
                     placeholder={"Enter a awards of the film"}
                 />
                 <div className='btn-container'>

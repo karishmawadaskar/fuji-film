@@ -1,3 +1,74 @@
-.film-card{
-    border:1px solid black;
+.film-card-content{
+      background: linear-gradient(to bottom right, #000000 0%, #663310 100%);
+ border: 1px solid black;
+ color: white;
+    padding: 5px;
+    margin: 10px;
+    max-width: 800px;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+.film-card { 
+    display: flex;
+    
+
+}
+.releaseyear{
+    font-size: 15px;
+      margin: 5px ;
+      color: rgb(161, 153, 153);
+}
+.film-card-poster {
+    height: 180px;
+    width: 130px;
+    border-radius: 3px;
+    object-fit: cover;
+
+}
+
+.film-card-title {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 22px;
+    margin: 5px ;
+}
+.ratingImg{
+    margin:0 10px ;
+    height: 15px;
+}
+.shortDescription{
+    margin-top: 0;
+    padding: 5px;
+    font-size: 15px;
+}
+.rating-container{
+    margin-top: 0;
+    
+    padding: 0;
+}
+.rating{
+ margin-top: 0;
+    font-size: 18px;
+    display: inline-block;
+    width: 150px;
+}
+.film-card-director{
+    font-size: 15px;
+    color: rgb(238, 234, 234);
+}
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+     margin-top: 10px;
+}
+.category{
+    font-size: 15px;
+    margin-left: 10px;
+     margin-right: 30px;
+    display: inline-block;
+    
+}
+.deletebtn{
+    padding: 2px;
 }

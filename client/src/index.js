@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './style.css';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import  Home from './views/Home/Home';
-import Film from './views/Film/Film';
+import Film from './views/EditFilm/EditFilm';
 import AddFilm from './views/AddFilm/AddFilm';
+import EditFilm from './views/EditFilm/EditFilm';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router=createBrowserRouter([
@@ -24,6 +26,10 @@ const router=createBrowserRouter([
     path:"/addfilm",
     element:<AddFilm/>,
   },
+  {
+    path:"/film/edit/:id",
+    element:<EditFilm/>,
+  }
  ],
   {
     future: {

@@ -1,10 +1,12 @@
 
 .add-film-form{
-    background-color: rgb(202, 239, 254);
-    border:2px solid rgb(82, 178, 216) ;
+     background: linear-gradient(to bottom right, #000000 0%, #663310 100%);
     border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
     padding: 10px;
     display: block;
     margin: 0 auto;
     max-width: 700px;
+    color: white;
 }

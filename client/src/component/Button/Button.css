@@ -8,15 +8,17 @@
     padding:10px 30px;
     border-radius: 25px;
     border: none;
-    color: white;
+    color: #ccc;
     cursor: pointer;
-    margin: 10px 20px;
-    font-size: 22px;
+    margin: 0 20px;
+    font-size: 15px;
     
 }
 .primary{
-    background-color: blueviolet;
+    background-color: rgb(226, 43, 61);
+     color: rgb(39, 38, 38);
 }
 .secondary{
-    background-color: blue;
+    background-color: rgb(255, 123, 0);
+     color: rgb(39, 38, 38);
 }
