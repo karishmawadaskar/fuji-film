@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import {getHome,getHealth, getNotFound} from "./controllers/other.js";
 dotenv.config();
 import Film from "./models/Film.js";
+import { getFilm, postFilm,getFilmById ,deleteFilmById,updateFilmById,updateFilmRatingById} from './controllers/films.js';
 
 const app = express();
 app.use(express.json());
@@ -14,47 +15,13 @@ app.get("/",getHome);
 app.get("/health",getHealth);
 
 //film
-app.post("/films",async(req,res)=>{
+app.post("/films",postFilm);
+app.get ("/films",getFilm);
+app.get ("/films/:id",getFilmById);
+app.delete("/films/:id",deleteFilmById);
+app.put("/films/:id",updateFilmById);
+app.patch("/films/rating/:id",updateFilmRatingById);
 
-    const {
-        title,
-        shortDescription,
-        director,
-        poster,
-        releaseYear,
-        category,
-        language,
-        rating,
-        countries,
-        awards
-    }=req.body;
-
-    const newFilm = new Film({
-         title: title,
-        shortDescription:shortDescription,
-        director:director,
-        poster:poster,
-        releaseYear: releaseYear,
-        category:category,
-        language:language,
-        rating:rating,
-        countries:countries,
-        awards:awards
-    });
-
-    const savedFilm = await newFilm.save();
-
-    return res.status(201).json({
-        success:true,
-        message:"Film created.",
-        data:savedFilm
-    });
-});
-
-app.get ("/films",async(req,res)=>{
-    const films = await Film.find();
-    return res.status(200).json({success:true,data:films,message:"All Films fatched."})
-});
 const connectDB = async()=>{
   const conn = await mongoose.connect(process.env.MONGO_URI);
   if(conn){
