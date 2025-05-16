@@ -64,16 +64,16 @@ function EditFilm() {
     <div>
       <h1 className='edit-film-heading'>Edit Film</h1>
       <div className='add-film-form'>
-        <Input label="Title" value={film.title} onChange={(val) => setFilms({ ...film, title: val })} placeholder="Enter a title of the film" />
-        <Input label="Short Description" value={film.shortDescription} onChange={(val) => setFilms({ ...film, shortDescription: val })} placeholder="Enter a short description of the film" />
-        <Input label="Director" value={film.director} onChange={(val) => setFilms({ ...film, director: val })} placeholder="Enter a director name of the film" />
-        <Input label="Poster" value={film.poster} onChange={(val) => setFilms({ ...film, poster: val })} placeholder="Enter a URL of the poster" />
-        <Input label="ReleaseYear" value={film.releaseYear} onChange={(val) => setFilms({ ...film, releaseYear: val })} placeholder="Enter a release year" />
-        <Input label="Category" value={film.category} onChange={(val) => setFilms({ ...film, category: val })} placeholder="Enter a category" />
-        <Input label="Language" value={film.language} onChange={(val) => setFilms({ ...film, language: val })} placeholder="Enter a language" />
-        <Input label="Rating" value={film.rating} onChange={(val) => setFilms({ ...film, rating: val })} placeholder="Enter a rating" />
-        <Input label="Countries" value={film.countries} onChange={(val) => setFilms({ ...film, countries: val })} placeholder="Enter countries" />
-        <Input label="Awards" value={film.awards} onChange={(val) => setFilms({ ...film, awards: val })} placeholder="Enter awards" />
+        <Input label="Title" value={film.title} onChange={(val) => setFilms({ ...film, title: val })} placeholder="Enter a title of the film" required/>
+        <Input label="Short Description" value={film.shortDescription} onChange={(val) => setFilms({ ...film, shortDescription: val })} placeholder="Enter a short description of the film" required/>
+        <Input label="Director" value={film.director} onChange={(val) => setFilms({ ...film, director: val })} placeholder="Enter a director name of the film" required />
+        <Input label="Poster" value={film.poster} onChange={(val) => setFilms({ ...film, poster: val })} placeholder="Enter a URL of the poster" required/>
+        <Input label="ReleaseYear" value={film.releaseYear} onChange={(val) => setFilms({ ...film, releaseYear: val })} placeholder="Enter a release year" required/>
+        <Input label="Category" value={film.category} onChange={(val) => setFilms({ ...film, category: val })} placeholder="Enter a category" required/>
+        <Input label="Language" value={film.language} onChange={(val) => setFilms({ ...film, language: val })} placeholder="Enter a language" required/>
+        <Input label="Rating" value={film.rating} onChange={(val) => setFilms({ ...film, rating: val })} placeholder="Enter a rating" required/>
+        <Input label="Countries" value={film.countries} onChange={(val) => setFilms({ ...film, countries: val })} placeholder="Enter countries"required />
+        <Input label="Awards" value={film.awards} onChange={(val) => setFilms({ ...film, awards: val })} placeholder="Enter awards" required/>
 
         <div className='btn-container'>
           <Button title="Update Film" onClick={updateFilm} variant="secondary" />

@@ -11,10 +11,10 @@
 
 .film-card {
     display: flex;
-
-
 }
-
+.film-card-contain{
+    padding:0 10px;
+}
 .releaseyear {
     font-size: 15px;
     margin: 5px;
@@ -85,12 +85,111 @@
 
 .deletebtn {
     padding: 2px;
+    margin: 10px;
 }
 
-@media screen and(max-width:"661px") {
-    .buttons {
-    display: flex;
-    position:none;
-    
+/* ===== Media Queries ===== */
+
+/* Tablet View */
+@media screen and (min-width: 481.5px)and (max-width: 768px) {
+  .film-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+ 
+  .buttons {
+    position: static;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .rating,
+  .category,
+  .film-card-director {
+    font-size: 14px;
+    display: block;
+    text-align:left;
+  }
+  .button-container{
+    display: inline-block;
+    width: 350px;
+  }
+  .rating-container{
+     margin-top:0;
+  }
 }
+
+/* Mobile View */
+@media (max-width: 480px) {
+    .film-card {
+    flex-direction: column;
+    align-items: center;
+      padding:0 10px;
+  }
+
+  .rating,
+  .category,
+  .film-card-director {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+  }
+  .film-card-content {
+    padding: 10px;
+     margin:0;
+  }
+
+  .film-card-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .releaseyear {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .film-card-poster {
+    width: 100%;
+    height: 200px;
+  }
+
+  .shortDescription {
+   
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 0;
+    padding:0 10px;
+  }
+
+  .button-container{
+    display: inline-block;
+    width: 350px;
+  }
+  .rating-container{
+     margin-top:0;
+  }
+  .rating-container,
+  .buttons {
+   position: static;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    flex-wrap: wrap;
+    
+  }
+
+  .buttons button {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .rating {
+    margin-top: 0;
+    font-size: 18px;
+    display: inline-block;
+    width: 350px;
+}
+
 }

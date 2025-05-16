@@ -46,7 +46,7 @@ function FilmCard({
                 <div>
                     <img src={poster || null} alt='posterimg' className='film-card-poster'></img>
                 </div>
-                <div>
+                <div className='film-card-contain'>
                     <div>
                         <p className='shortDescription'>{shortDescription}</p>
                     </div>
