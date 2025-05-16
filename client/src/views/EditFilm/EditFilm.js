@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import './EditFilm.css'
 import Input from '../../component/Input/Input';
 import Button from '../../component/Button/Button';
 import toast, { Toaster } from 'react-hot-toast';
@@ -61,7 +62,7 @@ function EditFilm() {
 
   return (
     <div>
-      <h1>Edit Film</h1>
+      <h1 className='edit-film-heading'>Edit Film</h1>
       <div className='add-film-form'>
         <Input label="Title" value={film.title} onChange={(val) => setFilms({ ...film, title: val })} placeholder="Enter a title of the film" />
         <Input label="Short Description" value={film.shortDescription} onChange={(val) => setFilms({ ...film, shortDescription: val })} placeholder="Enter a short description of the film" />
@@ -78,7 +79,13 @@ function EditFilm() {
           <Button title="Update Film" onClick={updateFilm} variant="secondary" />
         </div>
       </div>
-      <Toaster />
+      <Toaster toastOptions={{
+          style: {
+            fontSize: '12px',
+            padding: '6px 12px',
+            maxWidth: '200px',
+          },
+        }}/>
     </div>
   );
 }

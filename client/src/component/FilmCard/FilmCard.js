@@ -30,7 +30,7 @@ function FilmCard({
 
             toast.success(response.data.message);
             window.location.reload();
-        } catch(err) {
+        } catch (err) {
             toast.error(err?.response?.data?.message || "Delete failed");
             console.error("Delete film failed:", err);
         }
@@ -58,23 +58,32 @@ function FilmCard({
                         <span className='category'>category : {category}</span>
                         <span className='category'>language : {language}</span>
                     </div>
-                    <div className='buttons'>                      
-                        <span className='category'>countries : {countries}</span>
-                        <span className='category'> <img src={awardImg} className='ratingImg' alt='ratingImg' />{awards}</span>
-                        <span><Button title={"Edit"} onClick={()=>{navigate(`/film/edit/${_id}`)}}/></span>
-                        <Button
-                            title={"delete"}
-                            className='deletebtn'
-                            alt='deleteImg'
-                            src={deleteImg}
-                            onClick={() => { deleteFilm() }}
-                        />
-                       
+                    <div className='button-container'>
+                        <div >
+                            <span className='category'>countries : {countries}</span>
+                            <span className='category'> <img src={awardImg} className='ratingImg' alt='ratingImg' />{awards}</span>
+                        </div>
+                        <div className='buttons'>
+                            <span><Button title={"Edit"} onClick={() => { navigate(`/film/edit/${_id}`) }} /></span>
+                            <Button
+                                title={"delete"}
+                                className='deletebtn'
+                                alt='deleteImg'
+                                src={deleteImg}
+                                onClick={() => { deleteFilm() }}
+                            />
+                        </div>
                     </div>
                 </div>
 
             </div>
-            < Toaster />
+            < Toaster toastOptions={{
+                style: {
+                    fontSize: '12px',
+                    padding: '6px 12px',
+                    maxWidth: '200px',
+                },
+            }} />
         </div>
 
     )
